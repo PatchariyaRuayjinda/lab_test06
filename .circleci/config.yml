@@ -6,6 +6,8 @@ workflows:
   sample:
     jobs:
       - build-and-test
+        context:
+          - lab_test06
 jobs:
   build-and-test:
     docker:
@@ -15,6 +17,9 @@ jobs:
       - python/install-packages:
           pkg-manager: pip
       - run: pip install pytest requests
+      - run:
+          name : Create ENV
+          command: env > .env
       - run:
           name: Run tests
           command: python -m pytest

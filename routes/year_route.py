@@ -1,9 +1,9 @@
 from fastapi import APIRouter
 from datetime import date
 
-year_api_route = APIRouter()
+year_api_router = APIRouter()
 
-@year_api_route.get("/service/getage")
+@year_api_router.get("/service/getage")
 async def cal_age(year: int = 0):
     current_year = date.today().year + 543
     if year == 0:
