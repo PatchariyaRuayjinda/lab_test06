@@ -5,9 +5,9 @@ orbs:
 workflows:
   sample:
     jobs:
-      - build-and-test
-        context:
-          - lab_test06
+      - build-and-test:
+          context:
+            - lab_test06
 jobs:
   build-and-test:
     docker:
